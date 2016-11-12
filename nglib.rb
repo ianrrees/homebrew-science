@@ -88,6 +88,18 @@ class Nglib < Formula
 end
 
 __END__
+diff -ur a/configure b/configure
+--- a/configure	2014-10-07 00:04:36.000000000 +1300
++++ b/configure	2016-11-12 21:43:00.000000000 +1300
+@@ -15354,7 +15354,7 @@
+ 
+ 	OCCFLAGS="-DOCCGEOMETRY -I$occdir/inc -I/usr/include/opencascade"
+ 
+-	OCCLIBS="-L$occdir/lib -lTKernel -lTKGeomBase -lTKMath -lTKG2d -lTKG3d -lTKXSBase -lTKOffset -lTKFillet -lTKShHealing -lTKMesh -lTKMeshVS -lTKTopAlgo -lTKGeomAlgo -lTKBool -lTKPrim -lTKBO -lTKIGES -lTKBRep -lTKSTEPBase -lTKSTEP -lTKSTL -lTKSTEPAttr -lTKSTEP209 -lTKXDESTEP -lTKXDEIGES -lTKXCAF -lTKLCAF -lFWOSPlugin"
++	OCCLIBS="-L$occdir/lib -lFWOSPlugin"
+ 
+ 
+ #  -lTKDCAF
 diff -ur a/libsrc/occ/Partition_Loop2d.cxx b/libsrc/occ/Partition_Loop2d.cxx
 --- a/libsrc/occ/Partition_Loop2d.cxx	2016-03-16 07:44:06.000000000 -0700
 +++ b/libsrc/occ/Partition_Loop2d.cxx	2016-03-16 07:45:40.000000000 -0700
