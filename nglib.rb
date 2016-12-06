@@ -15,9 +15,10 @@ class Nglib < Formula
   depends_on "opencascade" => :optional
   depends_on "oce" => :optional
 
-  # Fixes two issues.
-  # 1) A #define PI was used rather than M_PI
-  # 2) Prevent installation of TCL scripts that aren't needed without NETGEN
+  # Patch three issues:
+  #   Makefile - remove TCL scripts that aren't reuquired without NETGEN.
+  #   configure - remove TCL libs that caused issues with ld (#3624).
+  #   Partition_Loop2d.cxx - Fix PI that was used rather than M_PI
   patch :DATA
 
   def install
